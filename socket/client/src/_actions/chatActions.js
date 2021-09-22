@@ -6,7 +6,7 @@ export const sendChat = () => {
     }
 }
 
-export const receiveChat = () => {
+export const receiveChat = (data) => {
     return{
         type: type.RECEIVE_CHAT,
         data
