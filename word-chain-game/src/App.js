@@ -1,12 +1,21 @@
 import './App.css';
-import WordChainGame from './games/WordChainGame/WordChainGame';
+import WordChainGame from './components/WordChainGame/WordChainGame';
+import NumberBaseballGame from './components/NumberBaseballGame/NumberBaseballGame';
+import Main from './components/Main';
+import {BrowserRouter, Switch,Route} from "react-router-dom";
 
-function App() {
+function App(props) {
 
   return (
-    <div className="App">
-      <WordChainGame/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route exact path="/WordChainGame" component={WordChainGame} />
+          <Route exact path="/NumberBaseballGame" component={NumberBaseballGame} />
+          <Route exact path="/" component={Main} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

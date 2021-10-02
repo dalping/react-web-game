@@ -9,6 +9,7 @@ function WordChainGame() {
   const [Time, setTime] = useState(10)
   const [LastWord, setLastWord] = useState('')
   const [Switch,setSwitch] = useState(false)
+  const [MSG, setMSG] = useState('단어를 입력해서 시작!')
 
   useEffect(() => {
     if(Switch){
@@ -32,6 +33,7 @@ function WordChainGame() {
 const init = () =>{
   setText('')
   setLastWord('')
+  setMSG('단어를 입력해서 시작!')
   setWords([])
   setSwitch(false)
   setTime(10)
@@ -46,19 +48,19 @@ const onSubmit = (e) => {
 
   //입력한 글씨가 3글자가 아님
   if(Text.length !== 3){
-    alert("3글자를 입력해 주세요.")
+    setMSG("3글자를 입력해 주세요.")
     setText('')
     return
   }
   //이전 단어 끝 글자와 일치하지 않음
   if(LastWord.length>0 && LastWord[LastWord.length-1] !== Text[0]){
-    alert("틀렸습니다.")
+    setMSG("틀렸습니다.")
     setText('')
     return
   }
   
   if(Words.includes(Text)){
-    alert("이미 사용된 단어입니다.")
+    setMSG("이미 사용된 단어입니다.")
     setText('')
     return
   }
@@ -67,6 +69,7 @@ const onSubmit = (e) => {
   const arr = Words.concat([Text])
   setWords(arr)
   setText('')
+  setMSG('')
   setTime(10)
 }
 
@@ -78,9 +81,8 @@ const onSubmit = (e) => {
         <form onSubmit={onSubmit}>
           <input placeholder={"단어를 입력하세요."} onChange={(e)=>{setText(e.target.value)}} value={Text}></input>
           <button>클릭</button>
-        
-          <hr/>
         </form>
+          <span style={{height:'20px',color:"red",fontWeight:'500',marginBottom:'5px'}}>{MSG}</span>
           <div style={{width:"300px"}}>
             {Words.map((data,idx)=>(
               <span key={idx}>{`${data} > `}</span>
