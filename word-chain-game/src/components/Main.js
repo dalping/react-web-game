@@ -8,6 +8,7 @@ function Main(props) {
             <div className="games" style={{display:'flex', gap:'10px'}}>
                 <div className="mainBtn" onClick={()=>{props.history.push('/WordChainGame')}}>쿵쿵따</div>
                 <div className="mainBtn" style={{backgroundColor:'orange'}} onClick={()=>{props.history.push('/NumberBaseballGame')}}>숫자야구</div>
+                <div className="mainBtn" style={{backgroundColor:'green', color:'white'}} onClick={()=>{props.history.push('/ReactionVelocity')}}>반응속도</div>
             </div>
         </div>
     )
