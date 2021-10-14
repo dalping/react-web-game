@@ -4,6 +4,7 @@ import NumberBaseballGame from './components/NumberBaseballGame/NumberBaseballGa
 import Main from './components/Main';
 import {BrowserRouter, Switch,Route} from "react-router-dom";
 import ReactionVelocity from './components/ReactionVelocity/ReactionVelocity';
+import RPS from './components/RPS/RPS';
 
 function App(props) {
 
@@ -14,6 +15,7 @@ function App(props) {
           <Route exact path="/WordChainGame" component={WordChainGame} />
           <Route exact path="/NumberBaseballGame" component={NumberBaseballGame} />
           <Route exact path="/ReactionVelocity" component={ReactionVelocity} />
+          <Route exact path="/RPS" component={RPS} />
           <Route exact path="/" component={Main} />
         </Switch>
       </div>
