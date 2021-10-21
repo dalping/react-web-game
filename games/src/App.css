@@ -102,3 +102,13 @@
 .ball:nth-child(4) {
   background-color: greenyellow;
 }
+
+.games{
+  width: 40vw;
+  display: grid;
+  grid-gap:10px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
