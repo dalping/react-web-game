@@ -21,7 +21,7 @@ function App(props) {
           <Route exact path="/ReactionVelocity" component={ReactionVelocity} />
           <Route exact path="/RPS" component={RPS} />
           <Route exact path="/TimeCal" component={TimeCal} />
-          <Route exact path="/" component={Main} />
+          <Route exact path="*" component={Main} />
         </Switch>
       </div>
     </BrowserRouter>
